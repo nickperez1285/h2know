@@ -5,8 +5,9 @@
   <h2>Device Log</h2>
    
 <%@device_log.each do |d| %>
-<%= d.currentconsumption%> <br>
-<center><strong><%= d.currentconsumption.last %></strong></center>%>
+<% arr = []%>
+<% arr << d.currentconsumption%> <br>
+<center><strong><%= arr[-1] %></strong></center>%>
 <%end  %>
 
 
