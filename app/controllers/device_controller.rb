@@ -6,6 +6,11 @@ class DeviceController < ApplicationController
 
   def show 
     @device = Device.find(params[:id])
+    respond_to do |format| 
+      format.html
+      format.xml { render :xml => @device.to_xml }
+      format.json {render json: @device}
+    end 
   end 
 
   def new 
@@ -15,9 +20,10 @@ class DeviceController < ApplicationController
   def edit 
     @device = Device.find(params[:id])
   end 
+
   def update
     @device = Device.find(params[:id])
-      if @device.save
+      if @device.update_attributes(device_params)
       flash[:notice] = " device updated successfully"
       redirect_to(:action => 'index')
     else
