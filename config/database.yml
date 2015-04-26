@@ -15,7 +15,8 @@ default: &default
   pool: 5
   username: angelhacker
   password: password
-  socket: /tmp/mysql.sock
+#  socket: /tmp/mysql.sock
+  host: 127.0.0.1
 
 development:
   <<: *default
