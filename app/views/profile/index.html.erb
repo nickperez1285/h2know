@@ -1,9 +1,9 @@
 
 <div class="profile index">
   <h2>Profile</h2>
-  <%= link_to("Sign Up" , {:controller => "profile", :action => 'new'})%><br><br>
-
-  <%= link_to("Add New profile", {:action => 'new'}, :class => 'action new') %>
+  
+<!--<%= link_to("Sign Up" , {:controller => "profile", :action => 'new'})%><br><br>  -->
+  <%= link_to("Update Water Usage", {:action => 'new'}, :class => 'action new') %>
 
 <table class="listing" summary="Profilelist">
     <tr class="header">
@@ -11,20 +11,27 @@
       <th>Kitchen</th>
       <th>Sinks</th>
       <th>other</th>
+      <th><em>Total Gallons </em></th>
+      <th><em>Total Cost </em></th>
+
       <th>Actions</th>
     </tr>
     <% @profiles.each do |p| %>
     <tr>
-      <td><%= p.bathshower %></td>
+      <td><%= p.bathshower %></td><br>
       <td><%= p.kitchen %></td>
       <td><%= p.sinks%></td>
       <td><%= p.other%></td>
- 
+      <td><center><%= var = ((p.other).to_i + (p.sinks).to_i + (p.kitchen).to_i + (p.bathshower).to_i)%></center> </td> 
+      <td><%= (var.to_f * ".16".to_f) %></td>
+
+      
+
 
       </td>
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => p.id}, :class => 'action show') %>
-        <%= link_to("Edit", {:action => 'edit', :id => p.id}, :class => 'action edit') %>
+    
         <%= link_to("Delete", {:action => 'delete', :id => p.id}, :class => 'action delete') %>
       </td>
     </tr>

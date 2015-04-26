@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
-
+resources :posts do
+  member do
+    post 'upvote'
+  end
+end
   resources :users
+
+
 
  match ':controller(/:action(/:id))', :via => [:get, :post] 
   # root route

@@ -1,4 +1,5 @@
 class DeviceController < ApplicationController
+    # respond_to :html, :xml, :json
   layout 'admin' 
   def index 
     @devices= Device.all 
@@ -9,8 +10,8 @@ class DeviceController < ApplicationController
     respond_to do |format| 
       format.html
       format.xml { render :xml => @device.to_xml }
-      format.json {render json: @device}
-    end 
+    format.json {render :json => @device}
+     end 
   end 
 
   def new 

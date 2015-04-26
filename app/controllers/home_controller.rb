@@ -6,6 +6,9 @@ class HomeController < ApplicationController
 
 	end
 
+	
+
+
 	def show
 		@post = Post.find(params[:id])
 	end
@@ -53,6 +56,15 @@ def destroy
 
 end
 
+ def upvote
+    @up = Post.find(params[:id])
+    @up.votes.create
+    redirect_to(:action => 'index')
+  end
+
+  def downvote
+   @down =  Post.upvote(params[:id])
+  end
 private 
 
 def post_params

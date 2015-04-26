@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426044617) do
+ActiveRecord::Schema.define(version: 20150426113107) do
 
   create_table "device_logs", force: :cascade do |t|
     t.integer  "values",     limit: 4
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20150426044617) do
     t.string   "location",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

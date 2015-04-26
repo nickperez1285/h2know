@@ -3,28 +3,28 @@
   <h2>Posts</h2>
   <%= link_to("Sign Up" , {:controller => "users", :action => 'new'})%><br><br>
 
-  <%= link_to("Add New post", {:action => 'new'}, :class => 'action new') %>
+  <%= link_to("Add New post", {:action => 'new'}, :class => 'action new') %> <br><br>
+  <%= link_to("Registered Users ", {:controller => "users", :action => 'index'})%>
 
 <table class="listing" summary="Post list">
     <tr class="header">
+      
       <th>Idea</th>
-      <th>Up Vote</th>
-      <th>Actions</th>
-    </tr>
-    <% @posts.each do |p| %>
-    <tr>
-      <td><%= p.content %></td>
-      <td class="center"><%= p.vote ? 'Yes' : 'No' %>
-      <%= image_tag(' ')  %> 
+      <th>Down Up </th>
+      <th>Votes Total</th>
+<!--       <th>Actions</th>
+ -->   
+  </tr>  <% @posts.each do |p| %><tr>
+      <td><%= p.content%> </td>
+      <td class="center">
+      <%= image_tag('tearup .png', height: '30')  %>
+      <%= image_tag('tearsdown.png', height: '30')  %> 
+      <td><%= Random.rand(5..30) %></td>
+<%end %>
 
       </td>
-      <td class="actions">
-        <%= link_to("Show", {:action => 'show', :id => p.id}, :class => 'action show') %>
-        <%= link_to("Edit", {:action => 'edit', :id => p.id}, :class => 'action edit') %>
-        <%= link_to("Delete", {:action => 'delete', :id => p.id}, :class => 'action delete') %>
-      </td>
+
     </tr>
-    <% end %>
   </table>
 </div>
 
