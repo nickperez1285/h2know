@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="porfile new">
+  <h2>Create Profile</h2>
+
+  <%= form_for(:profile, :url => {:action => 'create'}) do |p| %>
+
+  <%= render(:partial => "form", :locals => { :p => p})%>
+
+ 
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Profile") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'admin/index'
 
-  get 'admin/emailer'
 
   resources :users
 

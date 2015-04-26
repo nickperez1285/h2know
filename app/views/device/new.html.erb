@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="device new">
+  <h2>Create device</h2>
+
+  <%= form_for(:device, :url => {:action => 'create'}) do |p| %>
+
+  <%= render(:partial => "form", :locals => { :p => p})%>
+
+ 
+
+    <div class="form-buttons">
+      <%= submit_tag("Create device") %>
+    </div>
+
+  <% end %>
+</div>

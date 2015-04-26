@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	layout false
+	layout 'admin'
 
 	def index
 		@posts = Post.all
@@ -40,7 +40,7 @@ def update
 
 		render('edit')
 	end 
-end 
+end
 
 def delete
 	@post = Post.find(params[:id])

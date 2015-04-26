@@ -3,13 +3,10 @@ class CreateProfiles < ActiveRecord::Migration
 		create_table :profiles do |t|
 			t.integer "user_id"
 			t.integer :bathshower
-			t.integer :toilets
-			t.integer :faucets
-			t.integer :dishes
-			t.integer :laundry 
-			t.integer :garden
+			t.integer :kitchen
+			t.integer :sinks
+			
 			t.integer :other 
-
 
 			t.timestamps 
 		end

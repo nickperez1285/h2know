@@ -1,0 +1,33 @@
+
+<div class="profile index">
+  <h2>Profile</h2>
+  <%= link_to("Sign Up" , {:controller => "profile", :action => 'new'})%><br><br>
+
+  <%= link_to("Add New profile", {:action => 'new'}, :class => 'action new') %>
+
+<table class="listing" summary="Profilelist">
+    <tr class="header">
+      <th>Bath and Shower</th>
+      <th>Kitchen</th>
+      <th>Sinks</th>
+      <th>other</th>
+      <th>Actions</th>
+    </tr>
+    <% @profiles.each do |p| %>
+    <tr>
+      <td><%= p.bathshower %></td>
+      <td><%= p.kitchen %></td>
+      <td><%= p.sinks%></td>
+      <td><%= p.other%></td>
+ 
+
+      </td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => p.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => p.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => p.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

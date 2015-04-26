@@ -1,5 +1,5 @@
 
-<div class="pages index">
+<div class="posts index">
   <h2>Posts</h2>
   <%= link_to("Sign Up" , {:controller => "users", :action => 'new'})%><br><br>
 
@@ -14,7 +14,10 @@
     <% @posts.each do |p| %>
     <tr>
       <td><%= p.content %></td>
-      <td class="center"><%= p.vote ? 'Yes' : 'No' %></td>
+      <td class="center"><%= p.vote ? 'Yes' : 'No' %>
+      <%= image_tag(' ')  %> 
+
+      </td>
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => p.id}, :class => 'action show') %>
         <%= link_to("Edit", {:action => 'edit', :id => p.id}, :class => 'action edit') %>

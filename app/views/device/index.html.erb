@@ -1,0 +1,29 @@
+
+<div class="device index">
+  <h2>device</h2>
+  <%= link_to("Register Device " , {:controller => "device", :action => 'new'})%><br><br>
+
+
+<table class="listing" summary="devicelist">
+    <tr class="header">
+      <th>Location</th>
+      <th>Device Number</th>
+ 
+    </tr>
+    <% @devices.each do |p| %>
+    <tr>
+      <td><%= p.location %></td>
+      <td><%= p.device_num %></td>
+
+ 
+
+      </td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => p.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => p.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => p.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

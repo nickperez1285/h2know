@@ -1,0 +1,32 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="profile show">
+  <h2>Show profile</h2>
+
+  <table summary="Profile detail view">
+    <tr>
+      <th>Bathroom /shower</th>
+      <td><%= @profile.bathshower %></td>
+    </tr>
+    <tr>
+      <th>Kitchen</th>
+      <td><%= @profile.kitchen %></td>
+    </tr>  
+    <tr>
+      <th>sinks</th>
+      <td><%= @profile.sinks %></td>
+    </tr>
+
+
+    <tr>
+      <th>Created</th>
+      <td><%= @profile.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @profile.updated_at %></td>
+    </tr>
+  </table>
+
+</div>
