@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20150426022212) do
 
   create_table "posts", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
     t.string   "content",    limit: 255
     t.integer  "vote",       limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -40,7 +43,6 @@ ActiveRecord::Schema.define(version: 20150426022212) do
     t.string   "email",      limit: 255
     t.string   "username",   limit: 255
     t.string   "login",      limit: 255
-    t.string   "password",   limit: 40
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
