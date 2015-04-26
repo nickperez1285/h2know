@@ -1,0 +1,11 @@
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="device log">
+  <h2>Device Log</h2>
+   
+<%@device_log.each do |d| %>
+<%= d.values%> <br>
+<%end  %>
+
+</div>
