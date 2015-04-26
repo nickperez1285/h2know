@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
     	t.integer "user_id"
     	t.string "name"
     	t.string "content"
-    	t.integer "votes", :default => '0' 
+    	t.integer "votes", 
       t.timestamps 
     end
     add_index :posts, ["user_id"]

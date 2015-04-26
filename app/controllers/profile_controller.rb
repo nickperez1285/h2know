@@ -2,6 +2,7 @@ class ProfileController < ApplicationController
 	layout 'admin' 
 	def index 
 		@profiles = Profile.all 
+
 		
 	end 
 

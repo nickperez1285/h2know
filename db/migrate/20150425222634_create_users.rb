@@ -4,6 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string "name", :name
       t.string "email", :email
       t.string "username", :login
+      # test
+      t.string "gallons", :gallons
+      t.string "cost", :cost
 
       t.timestamps null: false
     end
