@@ -1,0 +1,11 @@
+<table summary="Post form fields">
+  <tr>
+    <th><%= p.label(:content) %></th>
+    <td><%= p.text_area(:content, :size => "40x5" ) %></td>
+  </tr>
+
+   <tr>
+    <th><%= p.label(:created_at) %></th>
+    <td><%= p.datetime_select(:created_at, :order =>[:month,:day, :year]) %></td>
+  </tr>
+</table>
