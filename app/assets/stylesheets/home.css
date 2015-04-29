@@ -1,3 +1,20 @@
+#signup{
+	float: right ;
+	margin-right: 5em;
+	font-size: large
+}
+#users {
+	float:right;
+		margin-right: 5em;
+			font-size: large
+
+
+}
+#center{
+	margin-left: 10px
+}
+
 body {
-    background-image: url("bakg.png");
+    background-image: url("back.png");
+    
 }

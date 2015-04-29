@@ -2,26 +2,31 @@
 
 <div class="posts index">
   <h2>Posts</h2>
-  <%= link_to("Sign Up" , {:controller => "users", :action => 'new'})%><br><br>
+  <div id="signup"> <%= link_to("Sign Up" , {:controller => "users", :action => 'new'})%></div><br>
+
+  <div id = "users"> <%= link_to("Registered Users ", {:controller => "users", :action => 'index'})%></div>
+
 
   <%= link_to("Add New post", {:action => 'new'}, :class => 'action new') %> <br><br>
-  <%= link_to("Registered Users ", {:controller => "users", :action => 'index'})%>
 
-<table class="listing" summary="Post list">
+  <table class="listing" summary="Post list">
     <tr class="header">
       
       <th>Idea</th>
       <th>Down Up </th>
       <th>Votes Total</th>
-<!--       <th>Actions</th>
- -->   
-  </tr>  <% @posts.each do |p| %><tr>
+
+    </tr>  
+
+    <% @posts.each do |p| %>
+    <tr>
       <td><%= p.content%> </td>
-      <td class="center">
-      <%= image_tag('tearup .png', height: '30')  %>
-      <%= image_tag('tearsdown.png', height: '30')  %> 
-      <td><%= Random.rand(5..30) %></td>
-<%end %>
+      <td id ="center">
+        <%= image_tag('tearup .png', height: '30')  %>
+        <%= image_tag('tearsdown.png', height: '30')  %> 
+        <td><center><%= Random.rand(5..30) %></center> </td>
+        
+        <%end %>
 
       </td>
 
